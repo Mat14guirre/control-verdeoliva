@@ -45,6 +45,13 @@ body::before {
   color: #2f4f4f;
 }
 
+.titulo{
+    font-size: 20px;
+}
+
+h2{
+    font-size: 15px;
+}
 form {
   display: flex;
   flex-wrap: wrap;
@@ -98,6 +105,8 @@ button:active {
 }
 
 button.danger {
+  margin-left: 25px;
+  font-size: 10px;
   background-color: #ef5350;
   box-shadow: 0 4px 10px rgba(239, 83, 80, 0.6);
 }
@@ -155,4 +164,94 @@ section p {
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
+}
+
+section p span {
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+.resumen-tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  background-color: #ecf8eb;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+  margin-top: 25px;
+}
+
+.tarjeta-resumen {
+  background-color: #ffffff;
+  border: 2px solid #a3c293;
+  border-radius: 12px;
+  padding: 16px 20px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.tarjeta-resumen:hover {
+  transform: translateY(-2px);
+}
+
+.tarjeta-resumen .titulo-resumen {
+  font-size: 0.95rem;
+  color: #2f4f4f;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.tarjeta-resumen .valor-resumen {
+  font-size: 1.4rem;
+  color: #3a6b35;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.resumen-item {
+  background: #ffffff;
+  border: 2px solid #cde5c3;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  color: #2f4f4f;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.resumen-item.destaque {
+  background: #d8f5d1;
+  border-color: #a5d6a7;
+  font-size: 1.2rem;
+  color: #1b5e20;
+  box-shadow: 0 0 6px rgba(85, 139, 47, 0.2);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px 16px;
+  }
+
+  .tarjeta-resumen .valor-resumen {
+    font-size: 1.2rem;
+  }
+
+  h1.titulo {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .resumen-tablero {
+    gap: 12px;
+    padding: 12px;
+  }
 }

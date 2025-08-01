@@ -9,9 +9,9 @@
 <body>
   <div class="container">
     <div class="logo-container">
-     <img src="assets/logo-verdeoliva.jpg" alt="Logo Dietética" class="logo" />
+      <img src="assets/logo-verdeoliva.jpg" alt="Logo Dietética" class="logo" />
     </div>
-    <h1>TABLERO DE CONTROL</h1>
+    <h1 class="titulo">TABLERO DE CONTROL 💵</h1>
 
     <section>
       <h2>Registrar Gasto</h2>
@@ -37,9 +37,28 @@
 
     <section>
       <h2>Resumen</h2>
-      <p>Total vendido hoy: $<span id="total-dia">0</span></p>
-      <p>Total vendido en el mes: $<span id="total-mes">0</span></p>
-      <p>Total gastado: $<span id="total-gastos">0</span></p>
+      <div class="resumen-tablero">
+        <div class="tarjeta-resumen">
+          <div class="titulo-resumen">Total vendido hoy</div>
+          <div class="valor-resumen"><span id="total-dia">0</span></div>
+        </div>
+        <div class="tarjeta-resumen">
+          <div class="titulo-resumen">Total vendido en el mes</div>
+          <div class="valor-resumen"><span id="total-mes">0</span></div>
+        </div>
+        <div class="tarjeta-resumen">
+          <div class="titulo-resumen">Gastos del día</div>
+          <div class="valor-resumen"><span id="gastos-dia">0</span></div>
+        </div>
+        <div class="tarjeta-resumen">
+          <div class="titulo-resumen">Gastos del mes</div>
+          <div class="valor-resumen"><span id="gastos-mes">0</span></div>
+        </div>
+        <div class="tarjeta-resumen total-ganancia">
+          <div class="titulo-resumen">Ganancia neta del mes</div>
+          <div class="valor-resumen"><span id="ganancia-neta">0</span></div>
+        </div>
+      </div>
       <button id="borrar-todo" class="danger">🗑️ Borrar todos los datos</button>
     </section>
   </div>
