@@ -17,6 +17,13 @@ function guardarDatos() {
   localStorage.setItem('ventas', JSON.stringify(ventas));
 }
 
+// Establecer fecha de hoy como valor por defecto en los campos
+function setearFechaHoy() {
+  const hoy = new Date().toISOString().slice(0, 10);
+  document.getElementById('gasto-fecha').value = hoy;
+  document.getElementById('venta-fecha').value = hoy;
+}
+
 // Agregar gasto
 gastoForm.addEventListener('submit', e => {
   e.preventDefault();
@@ -28,6 +35,7 @@ gastoForm.addEventListener('submit', e => {
   guardarDatos();
   actualizarVista();
   gastoForm.reset();
+  setearFechaHoy();
 });
 
 // Agregar venta
@@ -41,6 +49,7 @@ ventaForm.addEventListener('submit', e => {
   guardarDatos();
   actualizarVista();
   ventaForm.reset();
+  setearFechaHoy();
 });
 
 // Actualizar vista
@@ -78,9 +87,13 @@ document.getElementById('borrar-todo').addEventListener('click', () => {
     localStorage.removeItem('gastos');
     localStorage.removeItem('ventas');
     actualizarVista();
+    setearFechaHoy();
     alert('Datos borrados correctamente.');
   }
 });
 
-// Mostrar datos al cargar
-actualizarVista();
+// Inicializar al cargar la página
+window.addEventListener('load', () => {
+  actualizarVista();
+  setearFechaHoy();
+});

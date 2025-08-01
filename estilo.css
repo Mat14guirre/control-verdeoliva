@@ -1,59 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap');
+
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
   margin: 0;
-  padding: 20px;
+  padding: 40px 20px;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #d0f0c0, #ffffff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 300vw;
+  height: 300vh;
+  background: url('https://www.transparenttextures.com/patterns/food.png') repeat;
+  opacity: 0.08;
+  animation: moveBG 60s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveBG {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 1000px;
+  }
 }
 
 .container {
   max-width: 700px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  background: rgba(255 255 255 / 0.9);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  color: #2f4f4f;
 }
 
 form {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 15px;
 }
 
-input, button {
-  padding: 10px;
-  font-size: 1em;
+input[type="date"],
+input[type="text"],
+input[type="number"] {
+  flex: 1 1 120px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.8px solid #aacd97;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  color: #2f4f4f;
+  background: #f6fef3;
+}
+
+input[type="date"]:focus,
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: #4caf50;
+  background: #e8f5e9;
 }
 
 button {
-  background: #28a745;
-  color: white;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #81c784;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(129, 199, 130, 0.6);
+  flex: 0 0 auto;
 }
 
 button:hover {
-  background: #218838;
+  background-color: #66bb6a;
+  box-shadow: 0 6px 16px rgba(102, 187, 106, 0.8);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+button.danger {
+  background-color: #ef5350;
+  box-shadow: 0 4px 10px rgba(239, 83, 80, 0.6);
+}
+
+button.danger:hover {
+  background-color: #e53935;
+  box-shadow: 0 6px 16px rgba(229, 57, 53, 0.8);
+}
+
+button.danger:active {
+  box-shadow: none;
+  transform: translateY(2px);
 }
 
 ul {
   list-style: none;
   padding-left: 0;
   margin-top: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1.5px solid #a3c293;
+  border-radius: 8px;
+  background: #f8fff6;
 }
 
 li {
-  background: #e9ecef;
-  margin-bottom: 5px;
-  padding: 5px 10px;
-  border-radius: 4px;
+  padding: 8px 14px;
+  border-bottom: 1px solid #d0e6c4;
+  color: #2f4f4f;
+  font-size: 1rem;
 }
 
-button.danger {
-  background: #dc3545;
+li:last-child {
+  border-bottom: none;
 }
 
-button.danger:hover {
-  background: #c82333;
+section p {
+  font-size: 1.1rem;
+  margin: 6px 0;
+  color: #3a6b35;
+  font-weight: 600;
+  text-shadow: 0 1px 0 #d4e7c3;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
 }
