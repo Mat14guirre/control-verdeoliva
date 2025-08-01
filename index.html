@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Control de Gastos y Ventas</title>
+  <link rel="stylesheet" href="estilo.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Control de gastos</h1>
+
+    <section>
+      <h2>Registrar Gasto</h2>
+      <form id="gasto-form">
+        <input type="date" id="gasto-fecha" required />
+        <input type="text" id="gasto-descripcion" placeholder="Descripción" required />
+        <input type="number" id="gasto-monto" placeholder="Monto" required />
+        <button type="submit">Agregar Gasto</button>
+      </form>
+      <ul id="lista-gastos"></ul>
+    </section>
+
+    <section>
+      <h2>Registrar Venta</h2>
+      <form id="venta-form">
+        <input type="date" id="venta-fecha" required />
+        <input type="text" id="venta-descripcion" placeholder="Descripción" required />
+        <input type="number" id="venta-monto" placeholder="Monto" required />
+        <button type="submit">Agregar Venta</button>
+      </form>
+      <ul id="lista-ventas"></ul>
+    </section>
+
+    <section>
+      <h2>Resumen</h2>
+      <p>Total vendido hoy: $<span id="total-dia">0</span></p>
+      <p>Total vendido en el mes: $<span id="total-mes">0</span></p>
+      <p>Total gastado: $<span id="total-gastos">0</span></p>
+      <button id="borrar-todo" class="danger">🗑️ Borrar todos los datos</button>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
